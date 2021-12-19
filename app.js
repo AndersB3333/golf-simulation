@@ -11,7 +11,11 @@ const compression = require('compression')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(helmet())
+app.use(
+    helmet({
+        referrerPolicy: { policy: "no-referrer" },
+    })
+);
 app.use(compression())
 
 app.set('view engine', 'html')
