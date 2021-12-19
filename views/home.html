@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/style-home.css">
+    <link rel="stylesheet" href="/css/querieshome.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="#"><img class="logo" src="/imgs/logo.png" alt="Golf simulation logo">
+        </a>
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li><a href="#start" class="main-nav-link">How to get started</a></li>
+                <li><a href="#how" class="main-nav-link">Learn how it works</a></li>
+                <li><a href="/program" class="main-nav-link nav-cta">Test it out</a></li>
+
+            </ul>
+        </nav>
+
+        <button class="btn-mobile-nav">
+            <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+
+        </button>
+    </header>
+
+    <main>
+
+        <section class="section-hero">
+            <div class="hero">
+                <div class="hero-text-box">
+                    <h1 class="heading-primary">Find your golf shot pattern, pick better targets on the course</h1>
+                    <p class="hero-description"> This program takes in your previous golf shots
+                        and calculates the next 1000 shots, to find your shot pattern. All for free!
+                    </p>
+                    <a href="#how" class="btn btn--full margin-right-sm">Learn how it works <ion-icon
+                            name="arrow-down-outline"></ion-icon></a>
+                    <a href="/program" class="btn btn--outline">Try it out</a>
+                </div>
+                <div class="hero-img-box">
+                    <img src="/imgs/mashed_pic.png" alt="A golf ball in the fairway" class="hero-img">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-how" id="how">
+            <div class="container">
+                <span class="subheading">How it works</span>
+                <h2 class="heading-secondary">
+                    How to get started in 5 simple steps
+                </h2>
+            </div>
+
+            <div class="container grid grid--2-cols grid--center-v">
+                <!-- STEP 1 -->
+                <div class="step-text-box">
+                    <p class="step-number">1.</p>
+                    <h3 class="heading-tertiary">
+                        Imagine you're hitting 10 shots to a target
+                    </h3>
+
+                    <p class="step-description">
+                        You're hitting from the a certain point to the same target. It could be displayed like in this
+                        picture. The target doesn't necessarily have to be the pin, as long as the target is determined
+                        prior to the shot.
+                    </p>
+                </div>
+                <div class="step-img-box">
+                    <img src="/imgs/shot_pattern.png" alt="Protracer of 10 golf shots" class="step-img">
+                </div>
+                <!--          STEP 2        -->
+                <div class="step-img-box">
+                    <img src="/imgs/trackman-dispersion.jpg" alt="Trackman dispersion of 10 iron shots"
+                        class="step-img">
+                </div>
+
+                <div class="step-text-box">
+                    <p class="step-number">2.</p>
+                    <h3 class="heading-tertiary">
+                        How it would look like from an aerial view
+                    </h3>
+
+                    <p class="step-description">
+                        These shots that you've just been hitting, would look like this from a bird's perspective.
+                    </p>
+                </div>
+
+
+                <!-- STEP 3 -->
+                <div class="step-text-box">
+                    <p class="step-number">3.</p>
+                    <h3 class="heading-tertiary">
+                        Imagine putting these shots into certain squares
+                    </h3>
+
+                    <p class="step-description">
+                        We can take those shots and put them in specific boxes. Based on your target, we can classify
+                        them by how far away the shots are from the target.
+                    </p>
+                </div>
+
+                <div class="step-img-box">
+                    <img src="/imgs/trackman-dispersion_bins.jpg"
+                        alt="The Trackman data split into bins with 5 yards width and height" class="step-img">
+                </div>
+
+
+                <!-- STEP 4 -->
+                <div class="step-img-box">
+                    <img src="/imgs/dispersion_plotted_new.png"
+                        alt="The Trackman data split into bins with 5 yards width and height" class="step-img">
+                </div>
+
+                <div class="step-text-box">
+                    <p class="step-number">4.</p>
+                    <h3 class="heading-tertiary">
+                        Then plot into this program
+                    </h3>
+
+                    <p class="step-description">
+                        Based on how many shots there are in that specific box, we could plug in the frequency of these
+                        numbers into our program. For optimal experience, computers, but it's compatible with phones as
+                        well.
+                    </p>
+                </div>
+
+                <div class="step-text-box">
+                    <p class="step-number">5.</p>
+                    <h3 class="heading-tertiary">
+                        Based on your given data, our algorithm calculates and finds your shot pattern
+                    </h3>
+
+                    <p class="step-description">
+                        Based on these calculations, you can more easily see the pattern of your shots, and can see the
+                        probability of these numbers.
+                    </p>
+                </div>
+
+                <div class="step-img-box">
+                    <img src="/imgs/shots_simulated_new.png"
+                        alt="The Trackman data split into bins with 5 yards width and height" class="step-img">
+                </div>
+            </div>
+
+            <div class="cta">
+                <a href="/program" class="btn btn--full">Try it out</a>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container grid grid--3-cols">
+            <div class="logo-col">
+                <a href="#" class="footer-logo">
+                    <img class="logo" src="/imgs/logo-without-background-color.png" alt="Golf simulation logo">
+                </a>
+
+                <ul class="social-links">
+                    <li><a href="#" class="footer-link">
+                            <ion-icon name="logo-github" class="social-icon"></ion-icon>
+                        </a></li>
+                    <li>
+                        <a href="#" class="footer-link">
+                            <ion-icon class="social-icon" name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script defer="" src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+    <script src="/js/style.js"></script>
+</body>
+
+</html>
