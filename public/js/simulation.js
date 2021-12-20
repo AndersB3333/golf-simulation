@@ -97,6 +97,7 @@ resetBtn.addEventListener('click', function (e) {
     headline.innerText = "FIND YOUR SHOT PATTERN"
     submitBtn.disabled = false
     chartArea.classList.remove("chart-card")
+    resetBtn.classList.remove("subm-btn")
     headline.classList.remove("chart-headline")
     d3.select("svg").remove()
     for (let i = 0; i <= 120; i++) {
@@ -129,6 +130,11 @@ submitBtn.addEventListener('click', async (e) => {
     else {
 
         submitBtn.disabled = true
+        let loadDiv = document.querySelector("#load-text")
+        let loadText = document.createElement("p")
+        loadText.innerText = "Loading..."
+        loadDiv.append(loadText)
+        resetBtn.classList.add("subm-btn")
 
         for (let i = 1; i <= 121; i++) {
             let buttonDis = document.querySelector(`#btn${i}`)
@@ -146,9 +152,6 @@ submitBtn.addEventListener('click', async (e) => {
             .then(res => res.json())
             .then(resData => {
                 chartArea.classList.add("chart-card")
-
-
-
                 test = [
 
                     { distance: '150', direction: '-25', value: resData[110] },
@@ -410,6 +413,12 @@ submitBtn.addEventListener('click', async (e) => {
 
                 headline.innerText = "HERE'S YOUR SHOT PATTERN"
                 headline.classList.add("chart-headline")
+                window.scrollTo({
+                    top: 100,
+                    behavior: "smooth"
+                });
+                loadText.remove()
+
             }).catch(err => alert("Something went wrong, please contact us directly regarding this issue."))
     }
 })

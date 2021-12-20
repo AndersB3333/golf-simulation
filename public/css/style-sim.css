@@ -226,26 +226,11 @@ margin-left: 95px;
     font-size: 1.6rem;
 }
 
-.subm-btn {
-    padding: 1.4rem 1.8rem;
-    margin-top: 4rem;
-    border-radius: 9px;
-    background-color: #228be6;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 500;
-    cursor: pointer;
-}
+
 
 .subm-btn:hover {
-    padding: 1.4rem 1.8rem;
-    margin-top: 4rem;
-    border-radius: 9px;
-    background-color: #228be6;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 500;
-    cursor: pointer;
+    background-color: #1b6fb8;
+
 }
 
 .subm-btn:disabled {
@@ -269,6 +254,20 @@ margin-left: 95px;
     cursor: pointer;
 }
 
+.reset-btn:hover {
+    background-color: #e6e6e6;
+}
+
+.subm-btn {
+    padding: 1.4rem 1.8rem;
+    margin-top: 4rem;
+    border-radius: 9px;
+    background-color: #228be6;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
 
 /* ***************** */
 /*      CHART */
