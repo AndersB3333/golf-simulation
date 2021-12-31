@@ -128,6 +128,10 @@ submitBtn.addEventListener('click', async (e) => {
         alert("Need to put in at least 10 shots")
     }
     else {
+        let chartHeader = document.createElement("h2")
+        chartHeader.innerText = "Hover the boxes to see the frequency of each box"
+        chartHeader.classList.add("chart-para")
+        chartArea.append(chartHeader)
 
         submitBtn.disabled = true
         let loadDiv = document.querySelector("#load-text")
@@ -307,7 +311,7 @@ submitBtn.addEventListener('click', async (e) => {
                 g.append("text")
                     .attr("class", "x axis-label")
                     .attr("x", width / 2)
-                    .attr("y", height + 40)
+                    .attr("y", height + 50)
                     .attr("font-size", "20px")
                     .attr("text-anchor", "middle")
                     .text("Direction")
