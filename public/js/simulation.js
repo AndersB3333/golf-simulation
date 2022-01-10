@@ -6,7 +6,8 @@ const button = document.createElement("button")
 const scoreBtn = document.querySelector('#score')
 const submitBtn = document.querySelector("#tester")
 
-let chartArea = document.querySelector("#chart-card")
+let chartCard = document.querySelector("#chart-card")
+let chartArea = document.querySelector("#chart-area")
 
 let btnScore = []
 let btns = []
@@ -96,9 +97,14 @@ resetBtn.addEventListener('click', function (e) {
     e.preventDefault()
     headline.innerText = "FIND YOUR SHOT PATTERN"
     submitBtn.disabled = false
-    chartArea.classList.remove("chart-card")
+    chartCard.classList.remove("chart-card")
     resetBtn.classList.remove("subm-btn")
     headline.classList.remove("chart-headline")
+
+    if (chartArea.hasChildNodes()) {
+        let chartHeader = document.querySelector("#chart-header")
+        chartHeader.remove()
+    }
     d3.select("svg").remove()
     for (let i = 0; i <= 120; i++) {
         g[i + 1] = 255
@@ -130,9 +136,11 @@ submitBtn.addEventListener('click', async (e) => {
     else {
         let chartHeader = document.createElement("h2")
         chartHeader.innerText = "Hover the boxes to see the frequency of each box"
+        chartHeader.setAttribute("id", "chart-header")
         chartHeader.classList.add("chart-para")
-        chartArea.append(chartHeader)
+        chartCard.append(chartHeader)
 
+        resetBtn.disabled = true
         submitBtn.disabled = true
         let loadDiv = document.querySelector("#load-text")
         let loadText = document.createElement("p")
@@ -155,7 +163,7 @@ submitBtn.addEventListener('click', async (e) => {
         })
             .then(res => res.json())
             .then(resData => {
-                chartArea.classList.add("chart-card")
+                chartCard.classList.add("chart-card")
                 test = [
 
                     { distance: '150', direction: '-25', value: resData[110] },
@@ -422,6 +430,7 @@ submitBtn.addEventListener('click', async (e) => {
                     behavior: "smooth"
                 });
                 loadText.remove()
+                resetBtn.disabled = false
 
             }).catch(err => alert("Something went wrong, please contact us directly regarding this issue."))
     }

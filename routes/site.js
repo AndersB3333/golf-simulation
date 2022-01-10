@@ -14,4 +14,8 @@ router.get('/program', (req, res, next) => {
     res.sendFile(path.join(rootDir, 'views', 'simulation.html'))
 })
 
+router.get('/githubprofile', (req, res, next) => {
+    res.redirect("https://github.com/AndersB3333")
+})
+
 module.exports = router
