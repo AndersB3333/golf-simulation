@@ -2,6 +2,8 @@ const headline = document.querySelector('#headline');
 const buttonDiv = document.querySelector('#buttonDiv');
 const resetBtn = document.querySelector("#reset-btn")
 const button = document.createElement("button")
+const radioButtons = document.querySelectorAll("input[name='flexRadioDefault']")
+
 
 const scoreBtn = document.querySelector('#score')
 const submitBtn = document.querySelector("#tester")
@@ -100,7 +102,9 @@ resetBtn.addEventListener('click', function (e) {
     chartCard.classList.remove("chart-card")
     resetBtn.classList.remove("subm-btn")
     headline.classList.remove("chart-headline")
-
+    if (sendValues.length == 122) {
+        sendValues.pop()
+    }
     if (chartArea.hasChildNodes()) {
         let chartHeader = document.querySelector("#chart-header")
         chartHeader.remove()
@@ -134,6 +138,14 @@ submitBtn.addEventListener('click', async (e) => {
         alert("Need to put in at least 10 shots")
     }
     else {
+        let prefHand;
+        for (let radioButton of radioButtons) {
+            if (radioButton.checked) {
+                prefHand = parseInt(radioButton.value)
+            }
+        }
+
+
         let chartHeader = document.createElement("h2")
         chartHeader.innerText = "Hover the boxes to see the frequency of each box"
         chartHeader.setAttribute("id", "chart-header")
@@ -147,7 +159,7 @@ submitBtn.addEventListener('click', async (e) => {
         loadText.innerText = "Loading..."
         loadDiv.append(loadText)
         resetBtn.classList.add("subm-btn")
-
+        sendValues.push(prefHand)
         for (let i = 1; i <= 121; i++) {
             let buttonDis = document.querySelector(`#btn${i}`)
             buttonDis.disabled = true
@@ -163,6 +175,7 @@ submitBtn.addEventListener('click', async (e) => {
         })
             .then(res => res.json())
             .then(resData => {
+                console.log(resData)
                 chartCard.classList.add("chart-card")
                 test = [
 
