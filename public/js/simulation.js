@@ -175,7 +175,6 @@ submitBtn.addEventListener('click', async (e) => {
         })
             .then(res => res.json())
             .then(resData => {
-                console.log(resData)
                 chartCard.classList.add("chart-card")
                 test = [
 
