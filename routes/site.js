@@ -18,4 +18,8 @@ router.get('/githubprofile', (req, res, next) => {
     res.redirect("https://github.com/AndersB3333")
 })
 
+router.get('/inprofile', (req, res, next) => {
+    res.redirect("https://www.linkedin.com/in/anders-baumann")
+})
+
 module.exports = router
