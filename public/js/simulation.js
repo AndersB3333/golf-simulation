@@ -164,7 +164,7 @@ submitBtn.addEventListener('click', async (e) => {
             let buttonDis = document.querySelector(`#btn${i}`)
             buttonDis.disabled = true
         }
-        fetch('https://coord-cors-api.herokuapp.com/', {
+        fetch('https://simulation-cluster-api.herokuapp.com/', {
             method: 'POST',
             body: JSON.stringify({
                 value: sendValues
@@ -379,16 +379,7 @@ submitBtn.addEventListener('click', async (e) => {
                         .style("stroke", "none")
                         .style("opacity", 0.8)
                 }
-
-
-
-
-
-
-
                 // Temp ticks
-
-
                 // Scales
                 const x = d3.scaleBand()
                     .range([0, width])
