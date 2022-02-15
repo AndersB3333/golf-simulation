@@ -4,7 +4,7 @@ const resetBtn = document.querySelector("#reset-btn")
 const button = document.createElement("button")
 const radioButtons = document.querySelectorAll("input[name='flexRadioDefault']")
 
-
+const numShots = document.querySelector("#numShots")
 const scoreBtn = document.querySelector('#score')
 const submitBtn = document.querySelector("#tester")
 
@@ -94,7 +94,7 @@ let btnCreator = function () {
 
 btnCreator()
 
-
+alert("I'm currently working on an improved algorithm, I'll deploy a more realistic version within the end of this week")
 resetBtn.addEventListener('click', function (e) {
     e.preventDefault()
     headline.innerText = "FIND YOUR SHOT PATTERN"
@@ -102,7 +102,8 @@ resetBtn.addEventListener('click', function (e) {
     chartCard.classList.remove("chart-card")
     resetBtn.classList.remove("subm-btn")
     headline.classList.remove("chart-headline")
-    if (sendValues.length == 122) {
+    if (sendValues.length >= 121) {
+        sendValues.pop()
         sendValues.pop()
     }
     if (chartArea.hasChildNodes()) {
@@ -159,7 +160,7 @@ submitBtn.addEventListener('click', async (e) => {
         loadText.innerText = "Loading..."
         loadDiv.append(loadText)
         resetBtn.classList.add("subm-btn")
-        sendValues.push(prefHand)
+        sendValues.push(prefHand, parseInt(numShots.value))
         for (let i = 1; i <= 121; i++) {
             let buttonDis = document.querySelector(`#btn${i}`)
             buttonDis.disabled = true
