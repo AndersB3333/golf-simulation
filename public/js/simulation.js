@@ -94,7 +94,6 @@ let btnCreator = function () {
 
 btnCreator()
 
-alert("I'm currently working on an improved algorithm, I'll deploy a more realistic version within the end of this week")
 resetBtn.addEventListener('click', function (e) {
     e.preventDefault()
     headline.innerText = "FIND YOUR SHOT PATTERN"

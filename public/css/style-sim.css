@@ -195,7 +195,14 @@ body {
     grid-template-rows: repeat(11, 1fr);
 }
 
-
+.selection-shots {
+    margin-bottom: 15px;
+    margin-right: 1000px;
+}
+.selection-grid {
+    display: grid;
+    row-gap: 5px;
+}
 
 .guide h3{
     font-size: 3rem;
